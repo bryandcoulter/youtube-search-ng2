@@ -8,6 +8,6 @@ To install the npm and jspm required packages run:
 npm install
 
 Built with :  
-Angular 2 beta 16
-JSPM
+Angular 2 beta 16,
+JSPM,
 GULP
