@@ -1,0 +1,13 @@
+<div id="searchContainer" class="container">
+  <input type="text" class="form-control" (keyup.enter)="youtubeSearch()" placeholder="Search" [(ngModel)]="_searchCriteria.searchText" value="{{_searchCriteria.searchText}}">
+  <a class="btn-block btn-spacing" (click)="showFilter=!showFilter">Filter By Location</a>
+  <div *ngIf="showFilter">
+    <label>Address:</label>
+    <input type="text" class="form-control" placeholder="Address" [(ngModel)]="_searchCriteria.addressText" value="{{_searchCriteria.addressText}}">
+    <label>Range:</label>
+    <select class="form-control" [ngModel]="_searchCriteria.searchRange" (ngModelChange)="_searchCriteria.onSearchRangeChange($event)">
+      <option *ngFor="#i of _searchCriteria.searchRanges" value="{{i.value}}">{{i.displayText}}</option>
+    </select>
+  </div>
+  <button class="btn bnt-default btn-spacing" type="button" (click)="youtubeSearch()">GO!</button>
+</div>

@@ -1,0 +1,50 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es5",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": false
+  },
+  "exclude": [
+    "jspm_packages",
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ],
+  "filesGlob": [
+    "**/*.ts",
+    "**/*.tsx",
+    "!node_modules/**",
+    "!jspm_packages/**",
+    "./typings/**/*.d.ts"
+  ],
+  "files": [
+    "app/app.component.ts",
+    "app/boot.ts",
+    "app/youtube/commaSeparatedNumber.pipe.ts",
+    "app/youtube/favorites.component.ts",
+    "app/youtube/Favorites.ts",
+    "app/youtube/google.scriptloader.ts",
+    "app/youtube/google.service.ts",
+    "app/youtube/LatLng.ts",
+    "app/youtube/search.component.ts",
+    "app/youtube/SearchCriteria.ts",
+    "app/youtube/video.component.ts",
+    "app/youtube/videoList.component.ts",
+    "app/youtube/window.service.ts",
+    "app/youtube/youtube.component.ts",
+    "app/youtube/youtube.service.ts",
+    "app/youtube/Youtube.ts",
+    "typings/browser.d.ts",
+    "typings/browser/ambient/es6-shim/index.d.ts",
+    "./typings/browser.d.ts",
+    "./typings/browser/ambient/es6-shim/index.d.ts",
+    "./typings/main.d.ts",
+    "./typings/main/ambient/es6-shim/index.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}

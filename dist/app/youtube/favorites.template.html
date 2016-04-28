@@ -1,0 +1,15 @@
+<div *ngIf="youtubeFavoritesItems.length > 0" class="container resultsFrame">
+  <h3>Favorites</h3>
+  <div class="videoList" *ngFor="#favItem of youtubeFavoritesItems">
+    <img class="pull-left" src="{{favItem.url}}"
+         width="120"/>
+    <div class="details pull-left">
+        <div title="{{favItem.title}}" class="title truncate">{{favItem.title}}</div>
+        <div title="{{favItem.description}}" class="desc truncate">{{favItem.description}}</div>
+        <div class="actions">
+          <button class="btn bnt-primary" type="button" (click)="playFavVideo(favItem)">Show Video</button>
+          <button class="btn bnt-primary" type="button" (click)="removeFavoriteVideo(favItem)">Remove</button>
+        </div>
+    </div>
+  </div>
+</div>

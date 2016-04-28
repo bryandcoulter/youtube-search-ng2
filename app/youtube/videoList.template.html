@@ -1,0 +1,22 @@
+<div *ngIf="youtubeVideos.items.length > 0" class="container resultsFrame">
+  <label for="yt-sortOptions">Sort By:</label>
+  <select id="yt-sortOptions" class="form-control" [ngModel]="_searchCriteria.searchSortBy" (ngModelChange)="onSortChange($event)">
+    <option *ngFor="#i of _searchCriteria.sortOptions" value="{{i.value}}">{{i.displayText}}</option>
+  </select>
+  <div class="videoList" *ngFor="#video of youtubeVideos.items">
+    <img class="pull-left" src="{{video.thumbnailDefault.url}}"
+         width="{{video.thumbnailDefault.width}}"
+         height="{{video.thumbnailDefault.height}}"/>
+    <div class="details pull-left">
+        <div title="{{video.title}}" class="title truncate">{{video.title}}</div>
+        <div title="{{video.description}}" class="desc truncate">{{video.description}}</div>
+        <div class="actions">
+        <button class="btn bnt-default" type="button" (click)="playVideoClick(video)">Show Video</button>
+        </div>
+    </div>
+  </div>
+  <div>
+    <button *ngIf="youtubeVideos.prevPageToken" class="btn bnt-primary" type="button" (click)="switchPage(youtubeVideos.prevPageToken)">Prev</button>
+    <button *ngIf="youtubeVideos.nextPageToken" class="btn bnt-primary" type="button" (click)="switchPage(youtubeVideos.nextPageToken)">Next</button>
+  </div>
+</div>

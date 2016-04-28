@@ -1,0 +1,44 @@
+<div id="videoContainer" *ngIf="showComponent" class="container">
+    <div class="clearfix">
+      <button type="button" class="btn btn-default pull-right" (click)="closeVideo()">&times;</button>
+    </div>
+    <div>
+      <iframe id="player" type="text/html" width="640" height="390"
+      src="{{videoURL}}"
+      frameborder="0"></iframe>
+    </div>
+    <div class="videoDisplay">
+      <div title="{{currentItem.title}}" class="title truncate">{{currentItem.title}}</div>
+      <div title="{{currentItem.description}}" class="desc truncate">{{currentItem.description}}</div>
+      <div class="videoControls">
+        <button *ngIf="!currentItemInFav" type="button" class="btn btn-primary" (click)="favoriteVideo()">Add To Favorites</button>
+      </div>
+      <div class="statFrame clearfix" *ngIf="currentItem.statistics">
+        <div class="statBox">
+          <div><strong>Views</strong></div>
+          <div>{{currentItem.statistics.viewCount | commaSeparatedNumber}}</div>
+        </div>
+        <div class="statBox">
+          <div><strong>Likes</strong></div>
+          <div>{{currentItem.statistics.likeCount | commaSeparatedNumber}}</div>
+        </div>
+        <div class="statBox">
+          <div><strong>Dislikes</strong></div>
+          <div>{{currentItem.statistics.dislikeCount | commaSeparatedNumber}}</div>
+        </div>
+        <div class="statBox">
+          <div><strong>Comments</strong></div>
+          <div>{{currentItem.statistics.commentCount | commaSeparatedNumber}} <a (click)="showComments(currentItem)" *ngIf="currentItem.statistics.commentCount > 0">Show</a></div>
+        </div>
+      </div>
+      <div *ngIf="videoComments.comments">
+        <div class="commentDisplay" *ngFor="#comment of videoComments.comments">
+          <div><strong>Author:</strong></div>
+          <div class="truncate" title="{{comment.author}}">{{comment.author}}</div>
+          <div><strong>Comment:</strong></div>
+          <div class="truncate" title="{{comment.textDisplay}}">{{comment.textDisplay}}</div>
+        </div>
+        <a *ngIf="videoComments.nextPageToken" (click)="getMoreComments(currentItem,videoComments)">Show More</a>
+      </div>
+    </div>
+</div>

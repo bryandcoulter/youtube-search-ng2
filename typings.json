@@ -1,0 +1,9 @@
+{
+  "name": "youtube",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
+    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#5c182b9af717f73146399c2485f70f1e2ac0ff2b"
+  }
+}
