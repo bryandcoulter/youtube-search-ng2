@@ -23,3 +23,5 @@ gulp.task('dist:generate',['dist:clean','dist:bundle','dist:html'], function() {
 gulp.task('dev:bundle', shell.task('jspm bundle app/**/* - [app/**/*] vendor-bundle.js --minify --inject'));
 
 gulp.task('default');
+
+gulp.task('bryan');
